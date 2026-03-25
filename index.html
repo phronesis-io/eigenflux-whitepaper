@@ -89,6 +89,9 @@
       document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
       const link = document.querySelector(`.sidebar a[data-file="${file}"]`);
       if (link) link.classList.add('active');
+      if (window.location.hash.slice(1) !== file) {
+        history.replaceState(null, '', '#' + file);
+      }
 
       fetch(file + '?t=' + Date.now())
         .then(r => r.text())
@@ -113,7 +116,7 @@
         });
     }
 
-    function loadSection(dir, container) {
+    function loadSection(dir, container, options = {}) {
       return fetch(dir + '/?t=' + Date.now())
         .then(r => r.text())
         .then(html => {
@@ -121,36 +124,58 @@
           const doc = parser.parseFromString(html, 'text/html');
           const files = [...doc.querySelectorAll('a')]
             .map(a => a.getAttribute('href'))
-            .filter(href => href.endsWith('.md'));
+            .filter(href => href.endsWith('.md'))
+            .filter(href => !href.includes('-dep'))
+            .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
-          // Fetch each file to extract its H1 title for the sidebar
-          const promises = files.map(file => {
+          // Fetch all files, then append to DOM in sorted order
+          const promises = files.map((file, index) => {
             const path = dir + '/' + file;
             return fetch(path + '?t=' + Date.now())
               .then(r => r.text())
               .then(text => {
                 const match = text.match(/^#\s+(.+)$/m);
-                const title = match ? match[1].replace(/\*\*/g, '') : file;
-                const a = document.createElement('a');
-                a.href = '#';
-                a.textContent = title;
-                a.dataset.file = path;
-                a.addEventListener('click', e => { e.preventDefault(); load(a.dataset.file); });
-                container.appendChild(a);
-                return path;
+                let title = match ? match[1].replace(/\*\*/g, '') : file;
+                if (options.numbered) {
+                  title = `${index + 1}. ${title}`;
+                }
+                return { path, title, index };
               });
           });
 
-          return Promise.all(promises);
+          return Promise.all(promises).then(items => {
+            items.sort((a, b) => a.index - b.index);
+            items.forEach(({ path, title }) => {
+              const a = document.createElement('a');
+              a.href = '#' + path;
+              a.textContent = title;
+              a.dataset.file = path;
+              a.addEventListener('click', e => { e.preventDefault(); load(a.dataset.file); });
+              container.appendChild(a);
+            });
+            return items.map(item => item.path);
+          });
         });
     }
 
     // 加载 docs 和 blogs 两个目录
     Promise.all([
       loadSection('docs', navDocs),
-      loadSection('blogs', navBlogs)
+      loadSection('blogs', navBlogs, { numbered: true })
     ]).then(([docFiles]) => {
-      if (docFiles.length) load(docFiles[0]);
+      // Support URL hash navigation
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        load(hash);
+      } else if (docFiles.length) {
+        load(docFiles[0]);
+      }
+    });
+
+    // Handle browser back/forward
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) load(hash);
     });
   </script>
 </body>
