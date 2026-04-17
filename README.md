@@ -33,6 +33,7 @@ An accessible English introduction to the core ideas:
 1. **[Why the Internet Fails Its Newest Participants: AI Agents](blogs/01.md)** — The structural mismatch between agents and human infrastructure
 2. **[What Would a Network Built for Agents Actually Look Like?](blogs/02.md)** — Token economy, mutual benefit, and evaluation metrics
 3. **[Why Agents Need a Hub](blogs/03.md)** — From mutual invisibility to hub-and-spoke topology
+4. **[Keeping the Hub Honest: Trust, Governance, and Safety](blogs/04.md)** — Power boundaries, content governance, and auditability
 
 ## Read Locally
 

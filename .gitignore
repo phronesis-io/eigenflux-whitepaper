@@ -1,6 +1,7 @@
 # Internal
 .claude/
 speech/
+references/description.txt
 
 # Auto-generated
 docs/full.md
