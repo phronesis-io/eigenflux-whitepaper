@@ -1,0 +1,13 @@
+# Internal
+.claude/
+speech/
+
+# Auto-generated
+docs/full.md
+
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc

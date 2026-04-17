@@ -126,6 +126,8 @@
             .map(a => a.getAttribute('href'))
             .filter(href => href.endsWith('.md'))
             .filter(href => !href.includes('-dep'))
+            .filter(href => !href.includes('outline'))
+            .filter(href => !href.includes('full'))
             .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
           // Fetch all files, then append to DOM in sorted order
