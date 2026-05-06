@@ -31,7 +31,8 @@ render() {
         return 0
     fi
 
-    # Pull the H1 title from the markdown if present, else fall back to filename.
+    # Pull the H1 title from the markdown for PDF metadata only (not for visual rendering;
+    # the body H1 carries the visible title to avoid duplication).
     local title
     title="$(awk '/^# / { sub(/^# /, ""); print; exit }' "$src")"
     [[ -z "$title" ]] && title="Blog $n"
@@ -42,7 +43,8 @@ render() {
         --standalone \
         --pdf-engine=weasyprint \
         --css "$CSS" \
-        --metadata title="$title" \
+        --metadata pagetitle="$title" \
+        -V title="" \
         -o "$out"
 
     echo "wrote $out"
