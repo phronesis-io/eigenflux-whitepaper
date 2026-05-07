@@ -253,7 +253,5 @@ sup a {
 }
 
 .footnote-back {
-    font-size: 0.85em;
-    color: #999;
-    margin-left: 0.3em;
+    display: none;
 }
