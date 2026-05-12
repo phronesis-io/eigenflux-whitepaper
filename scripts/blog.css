@@ -68,12 +68,12 @@ p {
 
 h1 {
     font-family: "Fraunces", "Charter", "Iowan Old Style", Georgia, serif;
-    font-size: 30pt;
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.012em;
+    font-size: 28pt;
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.005em;
     color: #1a1a1a;
-    margin: 0.4em 0 1.8em;
+    margin: 0.4em 0 2em;
     padding-bottom: 0;
     border-bottom: none;
     font-variation-settings: "opsz" 144;
