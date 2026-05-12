@@ -7,7 +7,7 @@
 
 @page {
     size: A4;
-    margin: 26mm 24mm 28mm 24mm;
+    margin: 32mm 32mm 34mm 32mm;
     background: #F4F1EA;
     @bottom-center {
         content: counter(page);
@@ -29,7 +29,7 @@
 }
 
 @page :first {
-    margin-top: 32mm;
+    margin-top: 38mm;
     @top-right { content: none; }
     @bottom-center { content: none; }
 }
@@ -39,7 +39,7 @@
    ------------------------------------------------------------------------- */
 
 html {
-    font-size: 10.5pt;
+    font-size: 11pt;
     background: #F4F1EA;
 }
 
