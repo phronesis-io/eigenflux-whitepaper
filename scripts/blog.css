@@ -7,7 +7,7 @@
 
 @page {
     size: A4;
-    margin: 32mm 32mm 34mm 32mm;
+    margin: 30mm 28mm 32mm 28mm;
     background: #F4F1EA;
     @bottom-center {
         content: counter(page);
@@ -45,7 +45,7 @@ html {
 
 body {
     font-family: "Fraunces", "Charter", "Iowan Old Style", "Source Serif Pro", Georgia, serif;
-    line-height: 1.58;
+    line-height: 1.8;
     color: #1a1a1a;
     background: #F4F1EA;
     hyphens: auto;
@@ -55,7 +55,7 @@ body {
 }
 
 p {
-    margin: 0 0 1.15em;
+    margin: 0 0 1.25em;
     text-align: justify;
     text-justify: inter-word;
     orphans: 3;
