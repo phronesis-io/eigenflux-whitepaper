@@ -8,7 +8,12 @@
 @page {
     size: A4;
     margin: 26mm 24mm 28mm 24mm;
-    background: #F4F1EA;
+    background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.18'/></svg>") repeat,
+        radial-gradient(circle at 92% 8%, rgba(185, 78, 42, 0.08) 0%, transparent 28%),
+        radial-gradient(circle at 8% 95%, rgba(185, 78, 42, 0.06) 0%, transparent 22%),
+        #F4F1EA;
+    background-size: 200px 200px, auto, auto, auto;
     @bottom-center {
         content: counter(page);
         font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
@@ -30,6 +35,10 @@
 
 @page :first {
     margin-top: 32mm;
+    background:
+        radial-gradient(circle at 88% 12%, rgba(185, 78, 42, 0.18) 0%, transparent 32%),
+        radial-gradient(circle at 12% 88%, rgba(185, 78, 42, 0.10) 0%, transparent 24%),
+        #F4F1EA;
     @top-right { content: none; }
     @bottom-center { content: none; }
 }
@@ -45,17 +54,18 @@ html {
 
 body {
     font-family: "Fraunces", "Charter", "Iowan Old Style", "Source Serif Pro", Georgia, serif;
-    line-height: 1.6;
+    line-height: 1.72;
     color: #1a1a1a;
     background: #F4F1EA;
     hyphens: auto;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+    letter-spacing: 0.005em;
 }
 
 p {
-    margin: 0 0 0.7em;
+    margin: 0 0 0.9em;
     text-align: justify;
     text-justify: inter-word;
     orphans: 3;
@@ -90,9 +100,34 @@ h2 {
     line-height: 1.22;
     letter-spacing: -0.005em;
     color: #1a1a1a;
-    margin: 2.4em 0 0.55em;
+    margin: 3em 0 0.65em;
     page-break-after: avoid;
     page-break-before: auto;
+}
+
+h2::before {
+    content: "";
+    display: block;
+    width: 2.6em;
+    height: 0.22em;
+    background: #b94e2a;
+    margin: 0 0 0.75em;
+    box-shadow: 0 1px 2px rgba(185, 78, 42, 0.18);
+}
+
+h2:nth-of-type(2)::before {
+    background: linear-gradient(90deg, #b94e2a 0%, #d68a6f 100%);
+    width: 3.4em;
+}
+
+h2:nth-of-type(3)::before {
+    background: linear-gradient(90deg, #8a3a1f 0%, #b94e2a 70%, #d68a6f 100%);
+    width: 4.2em;
+}
+
+h2:nth-of-type(4)::before {
+    background: #8a3a1f;
+    width: 2em;
 }
 
 h3 {
@@ -103,6 +138,28 @@ h3 {
     margin: 1.8em 0 0.45em;
     letter-spacing: 0.01em;
     page-break-after: avoid;
+    position: relative;
+    padding-left: 0.9em;
+}
+
+h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.35em;
+    height: 0.35em;
+    background: #b94e2a;
+}
+
+h3:nth-of-type(2)::before {
+    background: #8a3a1f;
+    border-radius: 50%;
+}
+
+h3:nth-of-type(3)::before {
+    background: #d68a6f;
+    transform: rotate(45deg);
 }
 
 /* -------------------------------------------------------------------------
@@ -112,10 +169,12 @@ h3 {
 blockquote {
     font-style: italic;
     color: #4a4a4a;
-    margin: 1.8em 1.5em 2em;
-    padding: 0 0 0 1.2em;
-    border-left: 2px solid #b94e2a;
+    margin: 1.8em 0.5em 2em;
+    padding: 0.9em 1.4em;
+    border-left: 3px solid #b94e2a;
+    background: linear-gradient(135deg, rgba(185, 78, 42, 0.06), rgba(185, 78, 42, 0.02));
     font-size: 0.97em;
+    box-shadow: 0 2px 8px rgba(40, 30, 20, 0.04);
 }
 
 blockquote p {
