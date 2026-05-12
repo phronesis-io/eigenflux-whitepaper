@@ -3,13 +3,15 @@
    Anthropic-inspired warm cream + terracotta aesthetic
    ========================================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
 @page {
     size: A4;
     margin: 26mm 24mm 28mm 24mm;
     background: #F4F1EA;
     @bottom-center {
         content: counter(page);
-        font-family: "Helvetica Neue", system-ui, sans-serif;
+        font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
         font-size: 8.5pt;
         font-weight: 400;
         color: #8a7d68;
@@ -17,7 +19,7 @@
     }
     @top-right {
         content: string(running-head);
-        font-family: "Helvetica Neue", system-ui, sans-serif;
+        font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
         font-size: 8pt;
         font-weight: 500;
         color: #a89a82;
@@ -42,7 +44,7 @@ html {
 }
 
 body {
-    font-family: "Charter", "Iowan Old Style", "Source Serif Pro", Georgia, serif;
+    font-family: "Fraunces", "Charter", "Iowan Old Style", "Source Serif Pro", Georgia, serif;
     line-height: 1.6;
     color: #1a1a1a;
     background: #F4F1EA;
@@ -65,7 +67,7 @@ p {
    ------------------------------------------------------------------------- */
 
 h1 {
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
     font-size: 26pt;
     font-weight: 700;
     line-height: 1.12;
@@ -82,7 +84,7 @@ h1 {
    ------------------------------------------------------------------------- */
 
 h2 {
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
     font-size: 16pt;
     font-weight: 600;
     line-height: 1.22;
@@ -94,7 +96,7 @@ h2 {
 }
 
 h3 {
-    font-family: "Helvetica Neue", system-ui, sans-serif;
+    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
     font-size: 11.5pt;
     font-weight: 600;
     color: #1a1a1a;
@@ -124,10 +126,25 @@ blockquote p {
 blockquote p:last-child {
     text-align: right;
     font-style: normal;
-    font-size: 0.88em;
+    font-size: 0.85em;
     color: #8a7d68;
     margin-top: 0.7em;
-    font-feature-settings: "smcp" 1;
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+}
+
+/* -------------------------------------------------------------------------
+   First-paragraph lead-in
+   ------------------------------------------------------------------------- */
+
+body > p:first-of-type::first-letter {
+    font-family: "Fraunces", "Charter", "Iowan Old Style", Georgia, serif;
+    font-size: 2.4em;
+    line-height: 1;
+    font-weight: 700;
+    color: #b94e2a;
+    padding-right: 0.04em;
+    vertical-align: -0.1em;
 }
 
 /* -------------------------------------------------------------------------
@@ -137,6 +154,16 @@ blockquote p:last-child {
 strong { font-weight: 600; color: #1a1a1a; }
 
 em { font-style: italic; }
+
+/* Inline math (pandoc wraps in span.math.inline) */
+.math {
+    font-feature-settings: "kern" 1, "tnum" 1;
+}
+
+.math.inline em {
+    font-style: italic;
+    color: #1a1a1a;
+}
 
 a {
     color: #b94e2a;
@@ -172,7 +199,7 @@ ul > li::marker { color: #b94e2a; }
 table {
     border-collapse: collapse;
     margin: 1.6em auto;
-    font-family: "Charter", "Iowan Old Style", Georgia, serif;
+    font-family: "Fraunces", "Charter", "Iowan Old Style", Georgia, serif;
     font-size: 0.95em;
     width: 88%;
     page-break-inside: avoid;
