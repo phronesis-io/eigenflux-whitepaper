@@ -67,15 +67,16 @@ p {
    ------------------------------------------------------------------------- */
 
 h1 {
-    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
-    font-size: 26pt;
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.018em;
+    font-family: "Fraunces", "Charter", "Iowan Old Style", Georgia, serif;
+    font-size: 30pt;
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.012em;
     color: #1a1a1a;
-    margin: 0 0 1.4em;
-    padding-bottom: 0.55em;
-    border-bottom: 1px solid #d4c9b3;
+    margin: 0.4em 0 1.8em;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-variation-settings: "opsz" 144;
     string-set: running-head content();
 }
 
