@@ -142,6 +142,50 @@ blockquote p:last-child {
 }
 
 /* -------------------------------------------------------------------------
+   Principle / Lemma callouts — theorem-style framed boxes with title tab.
+   Title text is read from the `data-name` attribute on the box.
+   ------------------------------------------------------------------------- */
+
+.principle, .lemma {
+    border: 1px solid #c9b890;
+    background: #faf6ee;
+    padding: 1.5em 1.6em 1.3em;
+    margin: 3em 0 2em;
+    page-break-inside: avoid;
+    position: relative;
+}
+
+.principle p,
+.lemma p {
+    margin: 0.55em 0;
+}
+
+.principle p:first-child,
+.lemma p:first-child {
+    margin-top: 0;
+}
+
+.principle p:last-child,
+.lemma p:last-child {
+    margin-bottom: 0;
+}
+
+.principle::before,
+.lemma::before {
+    content: attr(data-name);
+    position: absolute;
+    top: -1.3em;
+    left: -1px;
+    padding: 0.3em 1em;
+    background: #8a7d68;
+    color: #ffffff;
+    font-size: 0.72em;
+    font-variant: small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------
    Inline elements
    ------------------------------------------------------------------------- */
 
