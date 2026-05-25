@@ -4,10 +4,12 @@
    ========================================================================= */
 
 @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 400; src: url('fonts/fraunces-400.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 400; src: url('fonts/fraunces-400-italic.ttf') format('truetype'); }
 @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 500; src: url('fonts/fraunces-500.ttf') format('truetype'); }
 @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600; src: url('fonts/fraunces-600.ttf') format('truetype'); }
 @font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 700; src: url('fonts/fraunces-700.ttf') format('truetype'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; src: url('fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family: 'Inter'; font-style: italic; font-weight: 400; src: url('fonts/inter-400-italic.ttf') format('truetype'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; src: url('fonts/inter-500.ttf') format('truetype'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; src: url('fonts/inter-600.ttf') format('truetype'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; src: url('fonts/inter-700.ttf') format('truetype'); }
