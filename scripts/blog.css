@@ -3,7 +3,16 @@
    Warm cream + restrained terracotta accent
    ========================================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 400; src: url('fonts/fraunces-400.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 400; src: url('fonts/fraunces-400-italic.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 500; src: url('fonts/fraunces-500.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600; src: url('fonts/fraunces-600.ttf') format('truetype'); }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 700; src: url('fonts/fraunces-700.ttf') format('truetype'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; src: url('fonts/inter-400.ttf') format('truetype'); }
+@font-face { font-family: 'Inter'; font-style: italic; font-weight: 400; src: url('fonts/inter-400-italic.ttf') format('truetype'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; src: url('fonts/inter-500.ttf') format('truetype'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; src: url('fonts/inter-600.ttf') format('truetype'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; src: url('fonts/inter-700.ttf') format('truetype'); }
 
 @page {
     size: A4;
@@ -67,15 +76,16 @@ p {
    ------------------------------------------------------------------------- */
 
 h1 {
-    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
-    font-size: 26pt;
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.018em;
+    font-family: "Fraunces", "Charter", "Iowan Old Style", Georgia, serif;
+    font-size: 28pt;
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.005em;
     color: #1a1a1a;
-    margin: 0 0 1.4em;
-    padding-bottom: 0.55em;
-    border-bottom: 1px solid #d4c9b3;
+    margin: 0.4em 0 2em;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-variation-settings: "opsz" 144;
     string-set: running-head content();
 }
 
@@ -131,6 +141,50 @@ blockquote p:last-child {
     margin-top: 0.7em;
     font-variant: small-caps;
     letter-spacing: 0.04em;
+}
+
+/* -------------------------------------------------------------------------
+   Principle / Lemma callouts — theorem-style framed boxes with title tab.
+   Title text is read from the `data-name` attribute on the box.
+   ------------------------------------------------------------------------- */
+
+.principle, .lemma {
+    border: 1px solid #c9b890;
+    background: #faf6ee;
+    padding: 1.5em 1.6em 1.3em;
+    margin: 3em 0 2em;
+    page-break-inside: avoid;
+    position: relative;
+}
+
+.principle p,
+.lemma p {
+    margin: 0.55em 0;
+}
+
+.principle p:first-child,
+.lemma p:first-child {
+    margin-top: 0;
+}
+
+.principle p:last-child,
+.lemma p:last-child {
+    margin-bottom: 0;
+}
+
+.principle::before,
+.lemma::before {
+    content: attr(data-name);
+    position: absolute;
+    top: -1.3em;
+    left: -1px;
+    padding: 0.3em 1em;
+    background: #8a7d68;
+    color: #ffffff;
+    font-size: 0.72em;
+    font-variant: small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 600;
 }
 
 /* -------------------------------------------------------------------------
