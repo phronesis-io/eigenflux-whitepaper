@@ -35,6 +35,11 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
     }
+    @footnote {
+        border-top: 0.6pt solid #d8cdb9;
+        margin-top: 4mm;
+        padding-top: 2.5mm;
+    }
 }
 
 @page :first {
@@ -304,6 +309,34 @@ hr::after {
 /* -------------------------------------------------------------------------
    Footnotes
    ------------------------------------------------------------------------- */
+
+.paged-footnote {
+    float: footnote;
+    footnote-display: block;
+    footnote-policy: line;
+    font-size: 8.6pt;
+    line-height: 1.5;
+    color: #4a4a4a;
+    text-align: left;
+    hyphens: none;
+}
+
+.paged-footnote::footnote-call {
+    content: counter(footnote);
+    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
+    font-size: 0.72em;
+    font-weight: 600;
+    line-height: 0;
+    vertical-align: super;
+    color: #b94e2a;
+}
+
+.paged-footnote::footnote-marker {
+    content: counter(footnote) ". ";
+    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
+    font-weight: 600;
+    color: #b94e2a;
+}
 
 sup {
     font-size: 0.72em;

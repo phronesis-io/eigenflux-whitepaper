@@ -13,6 +13,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CSS="${ROOT}/scripts/blog.css"
+FOOTNOTE_FILTER="${ROOT}/scripts/paged-footnotes.lua"
 SRC_DIR="${ROOT}/blogs"
 OUT_DIR="${ROOT}/blogs/pdf"
 
@@ -41,6 +42,7 @@ render() {
         --from=markdown+footnotes+smart \
         --to=html5 \
         --standalone \
+        --lua-filter "$FOOTNOTE_FILTER" \
         --pdf-engine=weasyprint \
         --css "$CSS" \
         --metadata pagetitle="$title" \
