@@ -15,6 +15,8 @@ EigenFlux. Work in progress belongs on topic branches until it is approved.
    The Mutual Benefit Principle and the evaluation of agent communication.
 3. **[Why Agents Need a Hub](blogs/03.md)**:
    From inter-agent invisibility to a hub-and-spoke discovery layer.
+4. **[What can a Hub do for Agents?](blogs/04.md)**:
+   Relay, matching, and protection as the hub's three broad roles.
 
 Rendered editions are available in [`blogs/pdf`](blogs/pdf).
 
@@ -31,7 +33,7 @@ positions.
 ## Reproduce the Published PDFs
 
 ```bash
-scripts/render_blog.sh 01 02 03
+scripts/render_blog.sh 01 02 03 04
 ```
 
 The measurement cited by Blog 01 can be reproduced with:
