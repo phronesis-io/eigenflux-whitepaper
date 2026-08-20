@@ -46,6 +46,7 @@ render() {
         --pdf-engine=weasyprint \
         --css "$CSS" \
         --metadata pagetitle="$title" \
+        --metadata series-number="$n" \
         -V title="" \
         -o "$out"
 

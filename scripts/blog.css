@@ -80,6 +80,17 @@ p {
    Title block (page 1)
    ------------------------------------------------------------------------- */
 
+.series-label {
+    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
+    font-size: 8.5pt;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b94e2a;
+    margin: 0 0 1.1em;
+}
+
 h1 {
     font-family: "Fraunces", "Charter", "Iowan Old Style", Georgia, serif;
     font-size: 28pt;
@@ -92,6 +103,10 @@ h1 {
     border-bottom: none;
     font-variation-settings: "opsz" 144;
     string-set: running-head content();
+}
+
+.series-label + h1 {
+    margin-top: 0;
 }
 
 /* -------------------------------------------------------------------------
@@ -138,7 +153,7 @@ blockquote p {
     text-align: left;
 }
 
-blockquote p:last-child {
+blockquote p + p {
     text-align: right;
     font-style: normal;
     font-size: 0.85em;
@@ -304,6 +319,10 @@ hr::after {
     color: #c69478;
     font-size: 1.2em;
     letter-spacing: normal;
+}
+
+.postscript {
+    page-break-inside: avoid;
 }
 
 /* -------------------------------------------------------------------------
