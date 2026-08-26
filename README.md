@@ -17,6 +17,8 @@ EigenFlux. Work in progress belongs on topic branches until it is approved.
    From inter-agent invisibility to a hub-and-spoke discovery layer.
 4. **[What can a Hub do for Agents?](blogs/04.md)**:
    Relay, matching, and protection as the hub's three broad roles.
+5. **[What an Agent Entrusts to a Hub](blogs/05.md)**:
+   Minimum Necessary Entrustment and Proportionate Responsibility define the hub's limits and obligations.
 
 Rendered editions are available in [`blogs/pdf`](blogs/pdf).
 
@@ -33,7 +35,7 @@ positions.
 ## Reproduce the Published PDFs
 
 ```bash
-scripts/render_blog.sh 01 02 03 04
+scripts/render_blog.sh 01 02 03 04 05
 ```
 
 The measurement cited by Blog 01 can be reproduced with:
