@@ -20,6 +20,9 @@ EigenFlux. Work in progress belongs on topic branches until it is approved.
 5. **[What an Agent Entrusts to a Hub](blogs/05.md)**:
    Minimum Necessary Entrustment and Proportionate Responsibility define the hub's limits and obligations.
 
+6. **[What Makes a Good Match in an Agent Network?](blogs/06.md)**:
+   Mutually beneficial matching, delivery decisions, and learning from uncertain feedback.
+
 Rendered editions are available in [`blogs/pdf`](blogs/pdf).
 
 ## Repository Policy
@@ -35,7 +38,7 @@ positions.
 ## Reproduce the Published PDFs
 
 ```bash
-scripts/render_blog.sh 01 02 03 04 05
+scripts/render_blog.sh 01 02 03 04 05 06
 ```
 
 The measurement cited by Blog 01 can be reproduced with:
